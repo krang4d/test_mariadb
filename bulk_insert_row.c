@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
   printf("line 80\n");
   const char str[] = "INSERT INTO bulk_example2 VALUES (?,?,?)";
   unsigned long len = sizeof(str);
-  printf("%s  %d\n", str, len);
+  printf("%s  %ld\n", str, len);
   if (mysql_stmt_prepare(stmt, str, len))
   {  
     printf("line 86\n");
