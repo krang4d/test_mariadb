@@ -1,10 +1,10 @@
 all: test_maria_r test_maria_c
 
 test_maria_r: clean bulk_insert_row.c
-	gcc -g3 -Wall bulk_insert_row.c -o test_maria_r -I/home/local/src/db/mariadb-10.4.11/libmariadb/include -L/usr/lib/x86_64-linux-gnu -lmysqlclient
+	gcc -g3 -Wall bulk_insert_row.c -o test_maria_r -I/usr/local/src/server/libmariadb/include -L/usr/local/src/server/libmariadb/libmariadb -lmysqlclient
 
-test_maria_c: clean bulk_insert_column.c
-	gcc -g3 -Wall bulk_insert_column.c -o test_maria_c -I/home/local/src/db/mariadb-10.4.11/libmariadb/include -L/usr/lib/x86_64-linux-gnu -lmysqlclient
+test_maria_c: clean bulk_insert_col.c
+	gcc -g3 -Wall bulk_insert_col.c -o test_maria_c -I/usr/local/src/server/libmariadb/include -L/usr/local/src/server/libmariadb/libmariadb -lmysqlclient
 
 clean: 
 	rm -f test_maria_r test_maria_c
